@@ -24,7 +24,7 @@ with open("config.json", "r") as f:
     config = json.load(f)
 
 token = config["token"]
-
+my_api_key = config["my_api_key"]
 #Questo codice crea un oggetto ReplyKeyboardMarkup, che rappresenta il menu a tendina. Viene quindi aggiunto un pulsante per ogni opzione elencata nel menu e impostato come tastiera predefinita per tutti i messaggi inviati dal bot.
 
 keyboard = telebot.types.ReplyKeyboardMarkup(row_width=2)
@@ -93,7 +93,7 @@ def main(token):
     @bot.message_handler(commands=['price'])
     
     def price(message):
-        url = "https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD&api_key={}"
+        url = "https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD&api_key={my_api_key}"
         response = requests.get(url).json()
         price = response["USD"]
         # Creare l'oggetto Message
@@ -193,7 +193,7 @@ def main(token):
     @bot.message_handler(commands=['price_eth'])
     
     def price_eth(message):
-        url = "https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD&api_key={}"
+        url = "https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD&api_key={my_api_key}"
         response = requests.get(url).json()
         price = response["USD"]
         # Creare l'oggetto Message

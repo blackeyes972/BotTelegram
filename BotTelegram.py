@@ -93,7 +93,7 @@ def main(token):
     @bot.message_handler(commands=['price'])
     
     def price(message):
-        url = "https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD&api_key={2fec51bbb3df90d1c3e52b0ee833470239d99dcf2fa46ec100ea698ee3eabefe}"
+        url = "https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD&api_key={}"
         response = requests.get(url).json()
         price = response["USD"]
         # Creare l'oggetto Message
@@ -193,7 +193,7 @@ def main(token):
     @bot.message_handler(commands=['price_eth'])
     
     def price_eth(message):
-        url = "https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD&api_key={2fec51bbb3df90d1c3e52b0ee833470239d99dcf2fa46ec100ea698ee3eabefe}"
+        url = "https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD&api_key={}"
         response = requests.get(url).json()
         price = response["USD"]
         # Creare l'oggetto Message
